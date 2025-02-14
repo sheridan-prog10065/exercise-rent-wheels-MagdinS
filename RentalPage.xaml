@@ -33,7 +33,7 @@
                Grid.ColumnSpan="2" />
 
         <Border Grid.Row="4" Grid.ColumnSpan="2">
-            <CollectionView x:Name="_lstVehicleInventory" HorizontalOptions="Fill" />
+            <CollectionView x:Name="_lstVehicleInventory" HorizontalOptions="Fill" SelectionMode="Single"/>
         </Border>
         
         <Button Text="Create Rental"
