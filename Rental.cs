@@ -26,6 +26,7 @@ public struct Rental
 	public Vehicle Vehicle
 	{
 		get { return _vehicle; }
+		set { _vehicle = value; }
 	}
 
 	public DateTime StartDate
@@ -43,6 +44,17 @@ public struct Rental
 	public TimeSpan Duration
 	{
 		get { return EndDate - StartDate; }
+	}
+
+	#endregion
+	
+	#region Methods
+
+	public override string ToString()
+	{
+		decimal rentalCost = _vehicle.CalculateRentalCost(this);
+		//return $"{_vehicle.LicensePlate} rented for {this.Duration.Days} days, between {this.StartDate.Date:%Y-%m-%d} and {this.EndDate.Date:%x} at the cost {rentalCost} ";
+		return "TBD";
 	}
 
 	#endregion
