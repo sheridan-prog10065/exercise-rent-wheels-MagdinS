@@ -53,8 +53,7 @@ public struct Rental
 	public override string ToString()
 	{
 		decimal rentalCost = _vehicle.CalculateRentalCost(this);
-		//return $"{_vehicle.LicensePlate} rented for {this.Duration.Days} days, between {this.StartDate.Date:%Y-%m-%d} and {this.EndDate.Date:%x} at the cost {rentalCost} ";
-		return "TBD";
+		return $"{_vehicle.LicensePlate} rented for {this.Duration.Days} days, between {this.StartDate.Date:yyyy-MM-dd} and {this.EndDate.Date::yyyy-MM-dd} at the cost {rentalCost} ";
 	}
 
 	#endregion
