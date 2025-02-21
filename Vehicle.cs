@@ -4,10 +4,10 @@ public class Vehicle
 {
 	#region Field Variables
 
-	private string _make;
-	private double _mileage;
-	private byte _passengerCapacity;
-	private string _licensePlate;
+	protected string _make;
+	protected double _mileage;
+	protected byte _passengerCapacity;
+	protected string _licensePlate;
 
 	private const decimal DEFAULT_PRICE_PER_DAY = 67;
 	#endregion
@@ -59,7 +59,7 @@ public class Vehicle
 		return $"{_make}: {_licensePlate} with {_mileage} km and {_passengerCapacity} passengers.";
 	}
 
-	public decimal CalculateRentalCost(Rental contract)
+	public virtual decimal CalculateRentalCost(Rental contract)
 	{
 		return DEFAULT_PRICE_PER_DAY * contract.Duration.Days;
 	}
