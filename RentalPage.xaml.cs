@@ -13,6 +13,21 @@ public partial class RentalPage : ContentPage
         
         //link the vehicle inventory view with the list of vehicles
         _lstVehicleInventory.ItemsSource = _rentalShop.Vehicles;
+        _lstRentals.ItemsSource = _rentalShop.Rentals;
 
+    }
+
+    private void OnCreateRental(object sender, EventArgs e)
+    {
+        //Read the contract input information the user has entered
+        DateTime startDate = _dtpStartDate.Date;
+        DateTime endDate = _dtpEndDate.Date;
+        Vehicle selectedVehicle = (Vehicle)_lstVehicleInventory.SelectedItem;
+
+        //Create a rental contract structure
+        Rental rental = new Rental(selectedVehicle, startDate, endDate);
+
+        //Add the contract to the list of contracts in the rental shop
+        _rentalShop.Rentals.Add(rental);
     }
 }

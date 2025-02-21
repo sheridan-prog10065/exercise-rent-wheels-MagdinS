@@ -1,3 +1,5 @@
+using System.Diagnostics.Contracts;
+
 namespace RentWheelsApp;
 
 public struct Rental
@@ -43,6 +45,16 @@ public struct Rental
 	public TimeSpan Duration
 	{
 		get { return EndDate - StartDate; }
+	}
+
+	#endregion
+	
+	#region Methods
+
+	public override string ToString()
+	{
+		decimal rentalCost = _vehicle.CalculateRentalCost(this);
+		return $"{_vehicle.LicensePlate} was rented for {this.Duration.Days} days, from {this.StartDate.Date} to {this.EndDate.Date} for ${rentalCost}";
 	}
 
 	#endregion

@@ -19,21 +19,21 @@ public class SpeedyRentalShop
 	private void CreateDefaultVehicles()
 	{
 		//create first vehicle and add it to the list
-		Vehicle vehicle1 = new Vehicle("Honda");
+		Vehicle vehicle1 = new Car("Honda");
 		vehicle1.Mileage = 10000;
 		vehicle1.LicensePlate = "ABD 3456";
 		vehicle1.PassengerCapacity = 5;
 		_vehicleCollection.Add(vehicle1);
 
 		//create second vehicle and add it to the list
-		Vehicle vehicle2 = new Vehicle("Toyota");
+		Vehicle vehicle2 = new Truck("Toyota");
 		vehicle2.Mileage = 900;
 		vehicle2.LicensePlate = "FGH 1204";
 		vehicle2.PassengerCapacity = 7;
 		_vehicleCollection.Add(vehicle2);		
 
 		//create third vehicle and add it to the list
-		Vehicle vehicle3 = new Vehicle("Chevy");
+		Vehicle vehicle3 = new Van("Chevy");
 		vehicle3.Mileage = 75000;
 		vehicle3.LicensePlate = "XYZ 3688";
 		vehicle3.PassengerCapacity = 6;

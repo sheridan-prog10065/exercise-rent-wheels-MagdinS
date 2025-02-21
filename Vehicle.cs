@@ -8,6 +8,8 @@ public class Vehicle
 	private double _mileage;
 	private byte _passengerCapacity;
 	private string _licensePlate;
+
+	private const decimal DEFAULT_PRICE_PER_DAY = 67;
 	#endregion
 	
 	#region Constructors
@@ -59,7 +61,7 @@ public class Vehicle
 
 	public decimal CalculateRentalCost(Rental contract)
 	{
-		return 0.0m;
+		return DEFAULT_PRICE_PER_DAY * contract.Duration.Days;
 	}
 	
 	#endregion
