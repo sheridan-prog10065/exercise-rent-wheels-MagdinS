@@ -9,10 +9,10 @@ public class Truck : Vehicle //Truck IS-A Vehicle
 		
 	}
 
-	public decimal CalculateRentalCost(Rental contract)
+	public override decimal CalculateRentalCost(Rental contract)
 	{
 		//the cost is calculated based on price per day
-		return 300m;
+		return PRICE_PER_DAY * contract.Duration.Days;
 	}
 
 }
