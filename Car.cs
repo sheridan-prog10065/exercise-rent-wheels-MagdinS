@@ -13,16 +13,18 @@ public class Car : Vehicle //Car IS-A Vehicle
 	{
 		//the cost is calculated based on price per day and 
 		//the luxary premium factor for luxary  models: Ferrari and Lamborghini
-		if (_make == "Ferrari" || _make == "Lamborghini")
+		switch (_make)
 		{
-			//rental is for luxary car, apply a premium
-			return PRICE_PER_DAY * contract.Duration.Days * (decimal)LUXARY_PREMIUM_FACTOR;
+			case "Mercedes":
+			case "BMW":
+			case "Ferrari":
+			case "Lamborghini":
+				//rental is for luxary car, apply a premium
+				return PRICE_PER_DAY * contract.Duration.Days * (decimal)LUXARY_PREMIUM_FACTOR;
+			
+			default:
+				//regular car
+				return PRICE_PER_DAY * contract.Duration.Days;				
 		}
-		else
-		{
-			//regular car
-			return PRICE_PER_DAY * contract.Duration.Days;
-		}
-		
 	}
 }
