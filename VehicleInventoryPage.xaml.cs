@@ -15,26 +15,38 @@ public partial class VehicleInventoryPage : ContentPage
 		_lstVehicleInventory.ItemsSource = _rentalShop.Vehicles;
 	}
 
-	private void OnAddVehicle(object sender, EventArgs e)
+	private async void OnAddVehicle(object sender, EventArgs e)
 	{
-		//Read the vehicle properties
-		string vehicleType = _pckVehicleType.SelectedItem as string;
-		string vehicleMake = _txtMake.Text;
-		byte passCapacity = byte.Parse(_txtPassCapacity.Text);
-		double mileage = double.Parse(_txtMileage.Text);
-		string licensePlate = _txtLicensePlate.Text;
+		try
+		{
+			//Read the vehicle properties
+			string vehicleType = _pckVehicleType.SelectedItem as string;
+			string vehicleMake = _txtMake.Text;
+			byte passCapacity = byte.Parse(_txtPassCapacity.Text);
+			double mileage = double.Parse(_txtMileage.Text);
+			string licensePlate = _txtLicensePlate.Text;
 
-		//Create a vehicle object
-		Vehicle newVehicle = CreateVehicle(vehicleType, vehicleMake);
-		
-		//Set the vehicle properties to the user input
-		newVehicle.PassengerCapacity = passCapacity;
-		newVehicle.Mileage = mileage;
-		newVehicle.LicensePlate = licensePlate;
-		
-		//Add the vehicle to the vehicle inventory of the rental shop
-		_rentalShop.Vehicles.Add(newVehicle);
-	}
+			//Create a vehicle object
+			Vehicle newVehicle = CreateVehicle(vehicleType, vehicleMake);
+
+			//Set the vehicle properties to the user input
+			newVehicle.PassengerCapacity = passCapacity;
+			newVehicle.Mileage = mileage;
+			newVehicle.LicensePlate = licensePlate;
+
+			//Add the vehicle to the vehicle inventory of the rental shop
+			_rentalShop.Vehicles.Add(newVehicle);
+		}
+
+		catch (ArgumentNullException ex)
+		{
+			await DisplayAlert("Error", "Please provide all vehicle information.", "Very well...");
+		}
+        catch (FormatException ex)
+        {
+            await DisplayAlert("Error", "Please enter the correct numeric values for mileage and passenger capacity.", "My bad, yeah");
+        }
+    }
 
 	/// <summary>
 	/// Factory  method that creates a new vehicle instance based on the vehicle type
