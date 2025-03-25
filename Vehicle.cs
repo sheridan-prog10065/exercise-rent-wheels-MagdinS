@@ -1,5 +1,16 @@
 namespace RentWheelsApp;
 
+/// <summary>
+/// Custom exception handling for invalid vehicle operations
+/// </summary>
+public class InvalidVehicleException : Exception
+{
+	public InvalidVehicleException(string message) : base(message)
+	{
+	}
+
+}
+
 public class Vehicle
 {
 	#region Field Variables
@@ -29,25 +40,65 @@ public class Vehicle
 	public string Make
 	{
 		get { return _make; }
-		set { _make = value; }
+		set
+		{
+			//valid the new make
+			if (string.IsNullOrWhiteSpace(value))
+			{
+				throw new InvalidVehicleException("Cannot set the vehicle make. Value is invalid");
+			}
+
+			_make = value;
+		}
 	}
 
 	public double Mileage
 	{
 		get { return _mileage; }
-		set { _mileage = value; }
+		set
+		{
+			double newMileage = value;
+			if (newMileage < _mileage)
+			{
+				throw new InvalidVehicleException("The new mileage must be greater than the current mileage. The new mileage was not set");
+			}
+
+			_mileage = value;
+		}
 	}
 
 	public byte PassengerCapacity
 	{
 		get { return _passengerCapacity; }
-		set { _passengerCapacity = value; }
+		set
+		{
+			int newPassengerCapacity = value;
+
+			if (newPassengerCapacity < 2 || newPassengerCapacity > 10)
+			{
+				throw new InvalidVehicleException(
+					"Invalid passenger capacity. The passenger capacity must be between 2 and 10");
+			}
+
+			_passengerCapacity = value;
+		}
 	}
 
 	public string LicensePlate
 	{
 		get { return _licensePlate; }
-		set { _licensePlate = value; }
+		set
+		{
+			string newLicensePlate = value;
+
+			if (newLicensePlate.Length < 2 || newLicensePlate.Length > 8)
+			{
+				throw new InvalidVehicleException(
+					"Invalid license plate number. A license plate must have 6 characters");
+			}
+
+			_licensePlate = value;
+		}
 	}
 
 	#endregion

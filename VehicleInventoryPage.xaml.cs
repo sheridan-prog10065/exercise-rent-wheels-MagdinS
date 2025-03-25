@@ -45,6 +45,10 @@ public partial class VehicleInventoryPage : ContentPage
 		{
 			await DisplayAlert("Error", "Please provide numeric values for passenger capacity and mileage", "OK");
 		}
+		catch (InvalidVehicleException ex)
+		{
+			await DisplayAlert("Rent Wheels", ex.Message, "OK");
+		}
 	}
 
 	/// <summary>

@@ -30,11 +30,12 @@ public partial class RentalPage : ContentPage
             Rental rental = new Rental(selectedVehicle, startDate, endDate);
 
             //Add the contract to the list of contracts in the rental shop
-            _rentalShop.Rentals.Add(rental);
+            _rentalShop.RentVehicle(rental);
         }
         catch (ArgumentNullException exception)
         {
             await DisplayAlert("Error", "Please select the rental dates and vehicle to rent", "OK");
         }
+        //TODO: Add a catch block for the InvalidRentalAgreement exception
     }
 }

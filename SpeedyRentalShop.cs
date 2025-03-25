@@ -55,4 +55,21 @@ public class SpeedyRentalShop
 			return _vehicleCollection;
 		}
 	}
+
+	public void RentVehicle(Rental rental)
+	{
+		//Step 1: Validate the input
+		if (rental.Vehicle == null)
+		{
+			//TODO: throw InvalidRentalAgreement
+		}
+
+		if (rental.EndDate <= rental.StartDate)
+		{
+			//TODO: throw InvalidRentalAgreement
+		}
+
+		//Step 2: Use the Input
+		_rentalCollection.Add(rental);
+	}
 }
