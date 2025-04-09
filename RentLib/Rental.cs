@@ -1,6 +1,6 @@
 using System.Diagnostics.Contracts;
 
-namespace RentWheelsApp;
+namespace RentWheelsLib;
 
 public struct Rental
 {

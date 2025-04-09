@@ -1,4 +1,4 @@
-namespace RentWheelsApp;
+namespace RentWheelsLib;
 
 /// <summary>
 /// Custom exception handling for invalid vehicle operations

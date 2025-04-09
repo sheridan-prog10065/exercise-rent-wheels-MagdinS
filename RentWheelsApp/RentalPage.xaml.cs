@@ -1,4 +1,6 @@
-﻿namespace RentWheelsApp;
+﻿using RentWheelsLib;
+
+namespace RentWheelsApp;
 
 public partial class RentalPage : ContentPage
 {

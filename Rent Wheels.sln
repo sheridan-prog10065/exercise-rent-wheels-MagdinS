@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentWheelsApp", "RentWheelsApp.csproj", "{08272E81-AA6E-47C6-8D4B-1FC5125471B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RentWheelsApp", "RentWheelsApp\RentWheelsApp.csproj", "{08272E81-AA6E-47C6-8D4B-1FC5125471B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RentLib", "RentLib\RentLib.csproj", "{A23FAB3C-5D99-4205-8D23-782DEE3EA82A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +19,10 @@ Global
 		{08272E81-AA6E-47C6-8D4B-1FC5125471B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08272E81-AA6E-47C6-8D4B-1FC5125471B7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{08272E81-AA6E-47C6-8D4B-1FC5125471B7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A23FAB3C-5D99-4205-8D23-782DEE3EA82A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A23FAB3C-5D99-4205-8D23-782DEE3EA82A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A23FAB3C-5D99-4205-8D23-782DEE3EA82A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A23FAB3C-5D99-4205-8D23-782DEE3EA82A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

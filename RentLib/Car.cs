@@ -1,4 +1,4 @@
-namespace RentWheelsApp;
+namespace RentWheelsLib;
 
 public class Car : Vehicle //Car IS-A Vehicle
 {
